@@ -1,4 +1,4 @@
-__version__ = "0.4.15"
+__version__ = "0.4.15.fixed"
 
 # Use of SETUP built-in adapted from scikit-learn's setup utility.
 try:
@@ -10,7 +10,7 @@ if __PYFLUX_SETUP__:
     sys.stderr.write('Partial import of PyFlux during the build process.\n')
 else:
     from . import __check_build
-	
+
 from .arma import *
 from .var import *
 from .ensembles import *
