@@ -533,7 +533,7 @@ class TSM(object):
 
         if self.is_pandas is True:
 
-            if isinstance(date_index, pd.core.indexes.datetimes.DatetimeIndex):
+            if isinstance(date_index, pd.DatetimeIndex):
 
                 if pd.infer_freq(date_index) in ['H', 'M', 'S']:
 
@@ -545,7 +545,7 @@ class TSM(object):
                     for t in range(h):
                         date_index += pd.DateOffset((date_index[len(date_index)-1] - date_index[len(date_index)-2]).days)
 
-            elif isinstance(date_index, pd.core.indexes.numeric.Int64Index):
+            elif isinstance(date_index, pd.Int64Index):
 
                 for i in range(h):
                     new_value = date_index.values[len(date_index.values)-1] + (date_index.values[len(date_index.values)-1] - date_index.values[len(date_index.values)-2])
